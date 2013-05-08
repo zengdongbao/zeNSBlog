@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'node' });
+  res.render('index', { title: 'node.yyq.cn' });
 };
