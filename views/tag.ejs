@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= tag %>的相关文章 <%= SITE.NAME %></title>
+    <% include inc_static %>
+</head>
+<body>
+    <div class="container">
+        <% include inc_header %>
+        <div class="page-body">
+            <div class="post">
+                <div class="post-header">
+                    <h1>“<cite class="text-error"><%= tag %></cite>”的相关文章</h1>
+                </div>
+                <div class="post-body">
+                    <ul class="posts-list">
+                    <% for(var year in posts){ %>
+                        <li><%= year %></li>
+                        <ul>
+                            <% posts[year].forEach(function(post,index){ %>
+                            <li><span class="muted"><%= post.mtime %></span> <a href="<%= SITE.POST %>/<%= post.url %>"><%= post.title %></a></li>
+                            <% }) %>
+                        </ul>
+                    <% } %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <% include inc_footer %>
+    </div>
+</body>
+</html>

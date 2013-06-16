@@ -1,11 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+<title><%= SITE.NAME %></title>
+    <% include inc_static %>
+</head>
+<body>
+    <div class="container">
+        <% include inc_header %>
+        <div class="page-body">
+            <% posts.forEach(function(post){ %>
+            <div class="post">
+                <div class="post-header">
+                    <h3><a href="<%= SITE.POST %>/<%= post.url %>"><%= post.title %></a></h3>
+                    <p class="muted"><%= post.mtime %></p>
+                </div>
+                <div class="post-body">
+                    <%- post.summary %>
+                </div>
+                <div class="post-footer clearfix">
+                    <p class="post-review pull-left">
+                        <a href="<%= SITE.POST %>/<%= post.url %>"><i class="icon-eye-open"></i> 阅读全文...</a>
+                    </p>
+                    <div class="post-metas pull-right">
+                        <% if(post.tags.length > 0){ %>
+                        <ul class="post-tags clearfix">
+                            <li><i class="icon-tag"></i></li>
+                            <% post.tags.forEach(function(tag,index){ %>
+                            <li><% if(index>0){ %> , <% } %><a href="<%= SITE.TAG %>/<%= tag %>"><%= tag %></a></li>
+                            <% }) %>
+                        </ul>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+
+
+            <ul class="pager">
+                <% if(isPrev){ %>
+                <li class="previous">
+                    <a href="<%= SITE.POST %>?p=<%= prev %>">
+                        <i class="fui-arrow-left"></i>
+                        <span>上一页</span>
+                    </a>
+                </li>
+                <% }else{ %>
+                <li class="previous disabled">
+                    <a href="javascript://">
+                        <i class="fui-arrow-left"></i>
+                    </a>
+                </li>
+                <% } %>
+
+                <% if(isNext){ %>
+                <li class="next">
+                    <a href="<%= SITE.POST %>?p=<%= next %>">
+                        <span>下一页</span>
+                        <i class="fui-arrow-right"></i>
+                    </a>
+                </li>
+                <% }else{ %>
+                <li class="next disabled">
+                    <a href="javascript://">
+                        <i class="fui-arrow-right"></i>
+                    </a>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+        <% include inc_footer %>
+
+    </div>
+</body>
 </html>

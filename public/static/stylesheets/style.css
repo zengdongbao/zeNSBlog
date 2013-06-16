@@ -1,0 +1,125 @@
+body {
+  font-family: Lato, Helvetica, arial,  sans-serif;
+}
+
+pre code {
+    background: none;
+}
+
+a{
+    text-decoration: none;
+}
+.page-header .title{
+    font-size: 18px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+.page-header .title a{
+    color: #34495e;
+}
+
+.page-body{
+    margin: 30px auto;
+}
+.post{
+    margin-bottom: 50px;
+    padding: 50px 0;
+}
+.post-header{
+    border-bottom:1px #BDC3C7 dotted;
+    margin-bottom: 30px;
+}
+.post-footer {
+    padding: 20px 0 0;
+}
+.post-tags{
+    padding: 0;
+    margin: 0;
+}
+.post-tags li{
+    list-style: none;
+    float: left;
+    margin-right: 5px;
+}
+
+
+.pager li.disabled > a,
+.pager li.disabled > a:hover,
+.pager li.disabled > a:focus,
+.pager li.disabled > span {
+    color: #999999;
+    background-color: #f8f8f8;
+    border: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.page-footer{
+    padding-top: 30px;
+}
+
+.tags-list li{
+    list-style: none;
+    float: left;
+    padding:10px 15px;
+}
+.tags-list li a{
+    padding: 3px 5px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+.tags-list .lv1{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.tags-list .lv2{
+    font-size: 15px;
+    font-weight: 500;
+}
+.tags-list .lv3{
+    font-size: 16px;
+    font-weight: 600;
+}
+.tags-list .lv4{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* Large desktop */
+@media (min-width: 1200px) {
+    .page-body{
+        width: 60%;
+    }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .page-body{
+        width: 80%;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    .page-body{
+        width: 90%;
+    }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .page-body{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .post{
+        padding: 0;
+    }
+}
+
+
+

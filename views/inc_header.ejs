@@ -1,0 +1,10 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="<%= SITE.URL %>"><%= SITE.NAME %></a>
+        <ul class="nav nav pull-right">
+            <% for(var n in navs){ %>
+            <li><a href="<%= navs[n][1] %>"><%= navs[n][0] %></a></li>
+            <% } %>
+        </ul>
+    </div>
+</div>

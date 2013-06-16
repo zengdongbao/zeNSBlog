@@ -1,0 +1,11 @@
+{
+    "SITE":{
+        "NAME" : "ZEN",
+        "URL" : "http://127.0.0.1:3000",
+        "STATIC" : "/static",
+        "POST" : "/post",
+        "TAG" : "/tag",
+        "PAGE" : "/page",
+        "POSTS" : 3
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= post.title %> <%= SITE.NAME %></title>
+    <% include inc_static %>
+</head>
+<body>
+    <div class="container">
+        <% include inc_header %>
+        <div class="page-body">
+            <div class="post">
+                <div class="post-header">
+                    <h1><%= post.title %></h1>
+                    <p class="muted"><%= post.mtime %></p>
+                </div>
+                <div class="post-body">
+                    <%- post.body %>
+                </div>
+                <div class="post-footer clearfix">
+                    <div class="post-metas pull-right">
+                        <% if(post.tags.length > 0){ %>
+                        <ul class="post-tags clearfix">
+                            <li><i class="icon-tag"></i></li>
+                            <% post.tags.forEach(function(tag,index){ %>
+                            <li><% if(index>0){ %> , <% } %><a href="<%= SITE.TAG %>/<%= tag %>"><%= tag %></a></li>
+                            <% }) %>
+                        </ul>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <!-- Duoshuo Comment BEGIN -->
+            <div class="ds-thread"></div>
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name:"hehe0"};
+                (function() {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';ds.async = true;
+                    ds.src = 'http://static.duoshuo.com/embed.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0]
+                            || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+            <!-- Duoshuo Comment END -->
+
+        </div>
+
+        <% include inc_footer %>
+    </div>
+</body>
+</html>
