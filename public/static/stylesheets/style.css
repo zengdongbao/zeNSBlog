@@ -29,6 +29,9 @@ a{
     border-bottom:1px #BDC3C7 dotted;
     margin-bottom: 30px;
 }
+.post-body {
+    line-height: 1.8;
+}
 .post-footer {
     padding: 20px 0 0;
 }
