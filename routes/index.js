@@ -2,7 +2,6 @@
 var modMd = require( MOD + 'mod_md');
 var async = require("async");
 var md = require("node-markdown").Markdown;
-var hljs = require('highlight.js');
 require(LIB + 'lib_date');
 
 //首页
