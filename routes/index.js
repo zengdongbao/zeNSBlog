@@ -35,7 +35,7 @@ exports.posts = function(req, res){
 exports.post = function(req, res){
     var url = req.param("url");
     getPostFromList(url,function(data){
-        if(data.length == 0){
+        if(!data.isMatch){
             res.send(404);
         }else{
             res.render("post",data);
@@ -113,9 +113,11 @@ var getPostFromList = function(url,callback){
         isMatch : false
     };
     modMd.getDocumentsAll(function(err,documents){
+        console.log(documents);
         for(var i=0 , len = documents.length; i<len; i++){
             var post = documents[i];
             var postUrl = post.metas['url'] || post.url ;
+            console.log(url+"\n"+postUrl);
             if(url == postUrl){
                 re.isMatch = true;
                 modMd.getDocumentByDir(post.file,function(err,data){

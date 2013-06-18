@@ -332,7 +332,7 @@ function parseFileData(dir,options,callback){
         //获取文件名作为标题
         var title = path.basename(dir,matchExt);
         re.title = title;
-        re.url = re.mtime.getTime();
+        re.url = title;
         re.state = 1;
         if(options.model == "list"){
             re.msg = "文件信息解析完成！";
