@@ -31,7 +31,7 @@ Documents.getDocumentsAll = function(cb){
     var datas=[];
     try{
         var documents = fs.readdirSync(dataPath);
-        var options = {model:'list'};
+        var options = {model:'meta'};
 
         async.eachSeries(
             documents,
